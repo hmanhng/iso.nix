@@ -10,7 +10,7 @@
   outputs = { self, ... }@inputs:
     let
       nodes = {
-        "my-new-pc" = { system = "x86_64-linux"; format = "isoImage"; };
+        "myISO" = { system = "x86_64-linux"; format = "isoImage"; };
       };
 
       osConfigs = builtins.mapAttrs
