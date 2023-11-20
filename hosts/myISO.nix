@@ -36,6 +36,6 @@
     '';
   };
   nixpkgs.system = "x86_64-linux";
-  environment.systemPackages = with pkgs;[ parted neovim git ];
-  system.stateVersion = "22.11";
+  environment.systemPackages = with pkgs;[ parted neovim git ripgrep fd perl ];
+  system.stateVersion = "23.11";
 }
