@@ -1,5 +1,11 @@
-{ pkgs, lib, config, modulesPath, inputs, ... }:
 {
+  pkgs,
+  lib,
+  config,
+  modulesPath,
+  inputs,
+  ...
+}: {
   imports = [
     "${toString modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
   ];
@@ -22,7 +28,7 @@
       }
     '';
     shellAliases = {
-      hmanhng_flake = "git clone https://github.com/hmanhng/.flakes --branch=tmpfs && cd .flakes";
+      hmanhng_flake = "git clone https://github.com/hmanhng/.flakes && cd .flakes";
     };
   };
   # users.defaultUserShell = pkgs.fish;
@@ -36,6 +42,5 @@
     '';
   };
   nixpkgs.system = "x86_64-linux";
-  environment.systemPackages = with pkgs;[ parted neovim git ripgrep fd perl ];
-  system.stateVersion = "23.11";
+  environment.systemPackages = with pkgs; [parted neovim git ripgrep fd];
 }
