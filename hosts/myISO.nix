@@ -10,6 +10,8 @@
     "${toString modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
   ];
   isoImage.squashfsCompression = "gzip -Xcompression-level 1";
+  nix.binaryCaches = ["https://aseipp-nix-cache.global.ssl.fastly.net"];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   programs.bash = {
     shellInit = ''
